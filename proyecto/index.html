@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="es">
+    <head>
+    <!--Ianco Rodríguez-->    
+         <meta charset="utf-8" >
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                 <title> Proyecto Senpai - Entrega Número 1</title>
+                 <link rel="stylesheet" href="css/estilos.css">
+                 <link rel="preconnect" href="https://fonts.gstatic.com">
+                 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+                 <script src="js/clases.js"></script>
+                 <script src="js/funciones.js"></script>
+                 <script src="https://www.gstatic.com/charts/loader.js"></script>
+                 <script src="js/chart.js"></script>
+                
+    </head>
+    <body>
+        <aside class="izquierda">
+              <h2>Sistema de donaciones</h2>
+                 <img id="imagen" src="img/donacion.jpg" alt="imag"><br>
+            <nav> 
+                <ul>      
+                    <li><a id="personalizado" href="#RegistroDonantes"><strong> Donantes </strong></a></li>
+                    <li><a id="personalizado2" href="#RegistroDonaciones"><strong> Donaciones </strong></a></li>
+                    <li><a id="personalizado3" href="#RegistroEstadísticas"><strong> Estadísticas </strong></a></li>
+                </ul>  
+            </nav>         
+                <p class="totalYMayor" id="resultado">Total general <br></p>
+              <p class="totalYMayor" id="resultado2">Monto Donación Mayor <br></p>       
+        </aside> 
+        <main class="derecha">   
+            <a id="RegistroDonantes"></a>
+              <section>
+                  <h1> <strong> Registro de Donantes </strong></h1>
+                      <form id="formAgregarPersonas" action="#" method="POST">
+                            <label for="regNombre">Nombre:
+                        	<input type="text" id="regNombre" name="nombre"  placeholder ="Nombre" size="30" maxlength="20" required></label>
+                        	<label for="regDireccion">Dirección:
+                        	<input type="text" id="regDireccion" placeholder="Dirección" size="30" maxlength="20" required></label>
+            	            <label for="regTelefono">Teléfono </label>
+                            <input type="tel" id="regTelefono" placeholder="Teléfono" maxlength="20" required> <button type="button" id="botonAgregarDonante"> Agregar </button>
+                      </form>
+             </section>  
+                <a id="RegistroDonaciones"></a>
+             <section> 
+               <h1> <strong> Registro de Donaciones </strong></h1>   
+                <form id="formRegistroDonaciones" action="#" method="GET">
+                    <label for="SelectDonante">Donante:</label>     
+                    <select name="donante" id="SelectDonante" >
+                    </select>    
+                  <label for="selectModo">Modo: </label>
+                      <select name="modo" id="selectModo" >
+                           <option value="Efectivo" selected > Efectivo </option>
+                           <option value="Transferencia"> Transferencia </option> 
+                           <option value="Canje"> Canje </option> 
+                           <option value="Mercadería"> Mercadería </option> 
+                           <option value="Cheque"> Cheque </option> 
+                           <option value="Otros"> Otros </option> 
+                     </select>
+                     <label for="Monto"> Monto: </label>
+                           <input type="number" id="Monto" style="width: 50px;" min="1" required>
+                     <label for="regComentarios">Comentarios:
+                           <input type="text" id="regComentarios" name="Comentarios" maxlength ="20"></label>            
+                           <button type="button" id="botonAgregarDonacion"> Agregar </button>
+                </form> 
+             </section>
+                     <h3><strong>Donaciones Registradas </strong></h3>
+             <section>
+                            <p>Orden: <input type="radio" id="ordenDecreciente" name="Orden" value="decreciente" checked>
+                                <label for="ordenDecreciente">Monto Decreciente</label>
+                                    <input type="radio" id="Creciente" name="Orden" value="creciente">
+                                    <label for="Creciente">Nombre donante creciente</label></p>
+                     <br>
+                      <table id="tablaDonaciones">
+                             <thead>
+                                    <tr>
+                                        <th><strong> Donante </strong></th>
+                                            <th><strong> Modo </strong></th>
+                                            <th><strong> Monto </strong></th>
+                                            <th><strong> Comentarios </strong></th>
+                                    </tr>
+                             </thead>
+                      </table>
+                     <br>
+                        <p>Resaltar filas: <input type="checkbox" id="check"/>   
+                             <label for="deMonto">de monto:
+                                    <input type="number" id="deMonto" name="deMonto" placeholder="0" style="width: 60px;"></label></p>
+                                        <a id="RegistroEstadísticas"></a>
+                                             <h1> <strong> Estadísticas </strong></h1>  
+                                                    <p id="CantidadDonaciones">Cantidad total de donaciones:</p> 
+                                                    <p id="promedioDonacion">Promedio por donación: </p>    
+                                                    <p id="DonanteMasVeces">Donante que más veces donó: </p> 
+                                                    <p id="listaDonanteMasVeces2"></p>
+                     <ul id="listaDonanteMasVeces"> 
+                     </ul>
+                </section>
+                <div id="chart_div"></div> 
+        </main>        
+        <footer>
+                <div id="FondoFooter">   
+                     <p id="realizadoPor">Realizado por: Ianco Rodríguez</p>
+                </div>
+        </footer>
+    </body>     
+</html>
